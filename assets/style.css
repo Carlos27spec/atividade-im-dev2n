@@ -87,10 +87,19 @@ main {
     background-color: #32A961;
 }
 
-.input,
-.button {
-    display: flex;
-    flex-direction: column;
-    width: 100px;
+form {
+    padding: 10px;
+}
 
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 20px;
+    border: 1px solid transparent;
+    background-color: #F6F5F4;
+    outline: none;
+}
+
+input:focus {
+    border: 1px solid #32A961;
 }
