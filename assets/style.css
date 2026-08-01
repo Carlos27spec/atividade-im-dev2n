@@ -55,3 +55,42 @@ main {
     background-color: #E4DCD3;
     grid-area: main;
 }
+
+.nome,
+.icon {
+    display: flex;
+}
+
+.nome {
+    justify-content: space-between;
+    padding: 17px 10px;
+}
+
+.nome>p {
+    color: #32A961;
+    font-size: x-large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.icon {
+    gap: 10px;
+}
+
+.icon>img {
+    padding: 7px;
+    transition: 300ms;
+}
+
+.icon>img:hover {
+    border-radius: 100%;
+    padding: 7px;
+    background-color: #32A961;
+}
+
+.input,
+.button {
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+
+}
