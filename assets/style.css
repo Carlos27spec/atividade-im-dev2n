@@ -68,8 +68,9 @@ section {
 }
 
 main {
-    background-color: #E4DCD3;
+    background-image: url(./imgs/whatsapp_bg.png);
     grid-area: main;
+    border: 2px solid rgba(255, 255, 255, 0.541);
 }
 
 .nome,
@@ -167,11 +168,15 @@ input:focus {
     grid-row: 2 / 3;
     color: #667781;
     align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .hour {
     grid-column: 3;
     grid-row: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
     color: #32A961;
@@ -188,4 +193,81 @@ input:focus {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.conversa {
+    display: grid;
+    grid-template-columns: 1;
+    grid-template-rows: 1;
+}
+
+.cabeçalho {
+    background-color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil>img {
+    width: 70px;
+    height: 70px;
+    border-radius: 100%;
+    padding: 10px;
+}
+
+.opções {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 20px;
+}
+
+.opções>div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.msg-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background-color: #F0F2F5;
+    border-radius: 20px;
+}
+
+.msg-container>div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.msg-container img {
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 100%;
+    transition: 300ms;
+}
+
+.msg-container img:hover {
+    background-color: #E4E4E4;
+}
+
+.msg-container input {
+    border-radius: 20px;
+    padding: 10px 16px;
+    border: none;
+    background-color: #FFFFFF;
+    outline: none;
 }
