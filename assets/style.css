@@ -70,8 +70,16 @@ section {
 main {
     background-image: url(./imgs/whatsapp_bg.png);
     grid-area: main;
+    height: 100dvh;
     border: 2px solid rgba(255, 255, 255, 0.541);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
 }
+
+.conversa {
+    grid-row: 1;
+}
+
 
 .nome,
 .icon {
@@ -195,12 +203,6 @@ input:focus {
     align-items: center;
 }
 
-.conversa {
-    display: grid;
-    grid-template-columns: 1;
-    grid-template-rows: 1;
-}
-
 .cabeçalho {
     background-color: #FFFFFF;
     display: flex;
@@ -237,12 +239,13 @@ input:focus {
 }
 
 .msg-container {
+    grid-row: 3;
     display: flex;
-    align-items: center;
     gap: 10px;
-    padding: 10px 16px;
-    background-color: #F0F2F5;
-    border-radius: 20px;
+    padding: 4px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    margin: 20px;
 }
 
 .msg-container>div {
