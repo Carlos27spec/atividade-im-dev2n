@@ -272,6 +272,31 @@ input:focus {
     color: #667781;
 }
 
+.recebida,
+.enviada {
+    position: relative;
+}
+
+.recebida::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -8px;
+    border-top: 10px solid #FFFFFF;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.enviada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -8px;
+    border-top: 10px solid #D9FDD3;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+}
+
 .mensagens>p {
     max-width: 65%;
     padding: 8px 14px;
