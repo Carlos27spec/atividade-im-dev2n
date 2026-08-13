@@ -1,0 +1,29 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
+body {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.foto {
+    display: flex;
+}
+
+.sit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.numero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
