@@ -1,10 +1,17 @@
 const Perfil = document.getElementById("Perfil");
 const container = document.getElementById("container");
+const contatos = container.innerHTML;
 
 Perfil.addEventListener("click", function () {
-  Perfil.classList.add("ativo");
+  const telaAT = Perfil.classList.contains("ativo");
 
-  container.innerHTML = `
+  if (telaAT) {
+    Perfil.classList.remove("ativo");
+    container.innerHTML = contatos;
+  } else {
+    Perfil.classList.add("ativo");
+
+    container.innerHTML = `
      <div class="foto">
       <h1>Perfil</h1>
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
@@ -32,4 +39,5 @@ Perfil.addEventListener("click", function () {
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
     </div>
   `;
+  }
 });

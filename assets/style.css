@@ -343,3 +343,17 @@ input:focus {
 }
 
 /* Tela de perfil */
+.foto {
+    display: flex;
+}
+
+.sit {
+    display: flex;
+    justify-content: space-between;
+}
+
+.numero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
