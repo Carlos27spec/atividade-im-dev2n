@@ -12,8 +12,8 @@ Perfil.addEventListener("click", function () {
     Perfil.classList.add("ativo");
 
     container.innerHTML = `
-     <div class="foto">
-      <h1>Perfil</h1>
+      <h1 class="user">Perfil</h1>
+    <div class="foto">
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
     </div>
     <div class="info">
@@ -33,10 +33,24 @@ Perfil.addEventListener("click", function () {
     </div>
     <div class="final">
       <h2>Trocar de Perfil</h2>
+      <div class="perfis">
+      <div class="perfil-item">
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
+      <p>Tom Cruise</p>
+      </div>
+      <div class="perfil-item">
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
+      <p>Giga</p>
+      </div>
+      <div class="perfil-item">
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
+      <p>Jaden</p>
+      </div>
+      <div class="perfil-item">
       <img src="https://i.pravatar.cc/150?img=55" alt="" />
+      <p>Henrique</p>
+      </div>
+      </div>
     </div>
   `;
   }
