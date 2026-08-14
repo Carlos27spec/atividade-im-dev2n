@@ -1,3 +1,7 @@
+import { usuarios, listarUsuarios, usuarioID, mensagens } from "./contatos.js";
+
+mensagens(2, 1);
+
 const Perfil = document.getElementById("Perfil");
 const container = document.getElementById("container");
 const contatos = container.innerHTML;

@@ -1,4 +1,4 @@
-const usuarios = {
+export const usuarios = {
   "whats-users": [
     {
       id: 1,
@@ -618,8 +618,16 @@ const usuarios = {
 
 // console.table(usuarios["whats-users"][0].contacts[0].messages);
 
-function listarUsuarios() {
+export function listarUsuarios() {
   console.table(usuarios["whats-users"]);
 }
 
-listarUsuarios();
+// listarUsuarios(); Não mais necessário será usado em outro arquivo
+
+export function usuarioID(idUsuario) {
+  console.table(usuarios["whats-users"][idUsuario].contacts);
+}
+
+export function mensagens(usuario, contato) {
+  console.table(usuarios["whats-users"][usuario].contacts[contato].messages);
+}
