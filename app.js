@@ -26,8 +26,10 @@ Perfil.addEventListener("click", function () {
       </div>
       <h2>Telefone</h2>
       <div class="numero">
+        <div class="numero-left">
         <img src="./assets/icons/phone.svg" alt="" />
         <p>+55 11 98787 6567</p>
+        </div>
         <img src="./assets/icons/copy-btn.svg" alt="" />
       </div>
     </div>

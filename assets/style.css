@@ -343,15 +343,19 @@ input:focus {
 }
 
 /* Tela de perfil */
+.user {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 30px 0;
+}
+
 .foto {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-}
-
-.user {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 30px;
 }
 
 .foto>img {
@@ -362,15 +366,37 @@ input:focus {
 
 .info {
     height: 100%;
+    padding: 20px;
 }
 
 .info>h2 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    margin: 0 0 6px 0;
+}
+
+.info>p {
+    font-size: 18px;
+    margin: 0 0 24px 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .sit {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+.sit>p {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.sit img {
+    width: 18px;
+    cursor: pointer;
 }
 
 .numero {
@@ -379,35 +405,55 @@ input:focus {
     align-items: center;
 }
 
+.numero-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.numero img {
+    width: 20px;
+    cursor: pointer;
+}
+
 .final {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 10px;
+    margin-top: 60px;
 }
 
 .final>h2 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    display: flex;
-    padding: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #555;
+    padding: 0;
+    margin: 0 0 6px 0;
 }
 
 .perfis {
     display: flex;
     justify-content: center;
-    padding: 10px;
-    gap: 50px;
+    padding: 0;
+    gap: 40px;
 }
 
 .perfil-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
 }
 
 .perfis img {
     border-radius: 100%;
-    width: 60px;
+    width: 50px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.397);
+}
+
+.perfil-item p {
+    font-size: 14px;
+    margin: 0;
 }
