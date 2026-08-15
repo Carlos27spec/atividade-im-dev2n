@@ -2,6 +2,49 @@ import { usuarios, listarUsuarios, usuarioID, mensagens } from "./contatos.js";
 
 mensagens(2, 1);
 
+const elemento = {
+  caixa_de_mensagens: document.querySelector(".msg-container"),
+  input_mensagem: document.querySelector("input[type='text']"),
+  conversa: document.querySelector(".mensagens"),
+  lista_contatos: document.querySelector(".todoscontatos"),
+};
+
+elemento.caixa_de_mensagens.addEventListener("submit", (e) => {
+  e.preventDefault();
+  insertmessage(elemento.input_mensagem.value);
+});
+
+function horario() {
+  const data = new Date().toLocaleString("pt-BR", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: false,
+  });
+
+  return data;
+}
+
+function insertmessage(message) {
+  if (!message.trim()) return;
+
+  const div = document.createElement("div");
+  const paragrafo = document.createElement("p");
+  const span = document.createElement("span");
+
+  div.classList.add("enviada");
+
+  paragrafo.innerText = message;
+  span.classList.add("hour");
+  span.innerText = `${horario()}`;
+
+  paragrafo.append(span);
+  div.append(paragrafo);
+
+  elemento.conversa.append(div);
+  elemento.conversa.scrollTop = elemento.conversa.scrollHeight;
+  elemento.input_mensagem.value = "";
+}
+
 const Perfil = document.getElementById("Perfil");
 const container = document.getElementById("container");
 const contatos = container.innerHTML;
@@ -62,7 +105,7 @@ Perfil.addEventListener("click", function () {
   }
 });
 
-function criarContatos(srcFoto, nome, hora, ultima, NaoLidas) {
+function criarContatos(srcFoto, nome, hora, ultima, NaoLidas, idContato) {
   //criação dos elementos dos card de contatos
   const cardContainer = document.createElement("div");
   const fotoContato = document.createElement("img");
@@ -85,6 +128,9 @@ function criarContatos(srcFoto, nome, hora, ultima, NaoLidas) {
   horaMsg.innerText = hora;
   msgNaoLidas.innerText = NaoLidas;
   ultimaMsg.innerText = ultima;
+
+  // Adiciona o ID do contato no container para servir de parametro da função que carregas as mensagens
+  cardContainer.id = idContato;
 
   //adiciona os elementos filhos ao card de contato.
   cardContainer.append(
