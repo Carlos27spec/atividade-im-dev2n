@@ -61,3 +61,40 @@ Perfil.addEventListener("click", function () {
   `;
   }
 });
+
+function criarContatos(srcFoto, nome, hora, ultima, NaoLidas) {
+  //criação dos elementos dos card de contatos
+  const cardContainer = document.createElement("div");
+  const fotoContato = document.createElement("img");
+  const nomeContato = document.createElement("h2");
+  const ultimaMsg = document.createElement("p");
+  const horaMsg = document.createElement("div");
+  const msgNaoLidas = document.createElement("div");
+
+  //Define qual classe CSS será aplicada para estilizar o elemento
+  cardContainer.className = "Contatos";
+  fotoContato.className = "img";
+  nomeContato.className = "h2";
+  ultimaMsg.className = "p";
+  horaMsg.className = "hour";
+  msgNaoLidas.className = "msg";
+
+  //Preenche os dados que serão recebidos como parametro da função
+  fotoContato.src = srcFoto;
+  nomeContato.innerText = nome;
+  horaMsg.innerText = hora;
+  msgNaoLidas.innerText = NaoLidas;
+  ultimaMsg.innerText = ultima;
+
+  //adiciona os elementos filhos ao card de contato.
+  cardContainer.append(
+    fotoContato,
+    nomeContato,
+    ultimaMsg,
+    horaMsg,
+    msgNaoLidas,
+  );
+
+  //Adiciona o card a lista de contatos
+  elemento.lista_contatos.append(cardContainer);
+}
