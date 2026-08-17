@@ -4,7 +4,39 @@ mensagens(2, 1);
 
 const listar = listarUsuarios(2);
 
-console.log(listar);
+// console.log(listar);
+
+const userAT = {
+  usuarioAtual: 1,
+  contatoAtual: 0,
+};
+
+function carregarContatos(usuarioIndex) {
+  elemento.lista_contatos.innerHTML = ""; // limpa os cards estáticos do HTML
+
+  const contatos = usuarioID(usuarioIndex);
+
+  contatos.forEach((contato, index) => {
+    const ultimaMsg = contato.messages[contato.messages.length - 1];
+
+    criarContatos(
+      `https://i.pravatar.cc/150?u=${contato.number}`,
+      contato.name,
+      ultimaMsg.time,
+      ultimaMsg.content,
+      0,
+      index,
+    );
+  });
+}
+
+elemento.lista_contatos.addEventListener("click", (e) => {
+  const card = e.target.closest(".Contatos");
+  if (!card) return;
+
+  userAT.contatoAtual = number(card.id);
+  conversas(estado.usuarioAtual, estado.contatoAtual);
+});
 
 const elemento = {
   caixa_de_mensagens: document.querySelector(".msg-container"),

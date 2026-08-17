@@ -625,9 +625,9 @@ export function listarUsuarios() {
 // listarUsuarios(); Não mais necessário será usado em outro arquivo
 
 export function usuarioID(idUsuario) {
-  console.table(usuarios["whats-users"][idUsuario].contacts);
+  return usuarios["whats-users"][idUsuario].contacts;
 }
 
 export function mensagens(usuario, contato) {
-  console.table(usuarios["whats-users"][usuario].contacts[contato].messages);
+  return usuarios["whats-users"][usuario].contacts[contato].messages;
 }
