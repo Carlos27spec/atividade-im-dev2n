@@ -2,6 +2,10 @@ import { usuarios, listarUsuarios, usuarioID, mensagens } from "./contatos.js";
 
 mensagens(2, 1);
 
+const listar = listarUsuarios(2);
+
+console.log(listar);
+
 const elemento = {
   caixa_de_mensagens: document.querySelector(".msg-container"),
   input_mensagem: document.querySelector("input[type='text']"),

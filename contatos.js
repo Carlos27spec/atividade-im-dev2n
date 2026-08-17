@@ -619,7 +619,7 @@ export const usuarios = {
 // console.table(usuarios["whats-users"][0].contacts[0].messages);
 
 export function listarUsuarios() {
-  console.table(usuarios["whats-users"]);
+  return usuarios["whats-users"];
 }
 
 // listarUsuarios(); Não mais necessário será usado em outro arquivo
