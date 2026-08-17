@@ -45,20 +45,23 @@ function conversas(usuarioIndex, contatoIndex) {
   elemento.conversa.innerHTML = "";
 
   historicoMsg.forEach((msg) => {
-    const p = document.createElement("p")
+    const p = document.createElement("p");
     const span = document.createElement("span");
 
-    p.classList.add(msg.sender === "me" ? "enviada":"recebida");
+    p.classList.add(msg.sender === "me" ? "enviada" : "recebida");
     p.append(document.createTextNode(msg.content));
 
-    span.classList.add("hora")
+    span.classList.add("hora");
     span.innerText = msg.time;
     p.append(span);
 
     elemento.conversa.append(p);
   });
 
-  
+  elemento.conversa.scrollTop = elemento.conversa.scrollHeight;
+
+  document.querySelector(".perfil h2").innerText = contato.name;
+}
 
 const elemento = {
   caixa_de_mensagens: document.querySelector(".msg-container"),
