@@ -38,6 +38,28 @@ elemento.lista_contatos.addEventListener("click", (e) => {
   conversas(estado.usuarioAtual, estado.contatoAtual);
 });
 
+function conversas(usuarioIndex, contatoIndex) {
+  const historicoMsg = mensagens(usuarioIndex, contatoIndex);
+  const contato = usuarioID(usuarioIndex)[contatoIndex];
+
+  elemento.conversa.innerHTML = "";
+
+  historicoMsg.forEach((msg) => {
+    const p = document.createElement("p")
+    const span = document.createElement("span");
+
+    p.classList.add(msg.sender === "me" ? "enviada":"recebida");
+    p.append(document.createTextNode(msg.content));
+
+    span.classList.add("hora")
+    span.innerText = msg.time;
+    p.append(span);
+
+    elemento.conversa.append(p);
+  });
+
+  
+
 const elemento = {
   caixa_de_mensagens: document.querySelector(".msg-container"),
   input_mensagem: document.querySelector("input[type='text']"),
