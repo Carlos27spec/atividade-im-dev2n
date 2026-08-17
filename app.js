@@ -27,20 +27,17 @@ function horario() {
 function insertmessage(message) {
   if (!message.trim()) return;
 
-  const div = document.createElement("div");
   const paragrafo = document.createElement("p");
   const span = document.createElement("span");
 
-  div.classList.add("enviada");
+  paragrafo.classList.add("enviada");
+  paragrafo.append(document.createTextNode(message));
 
-  paragrafo.innerText = message;
-  span.classList.add("hour");
-  span.innerText = `${horario()}`;
-
+  span.classList.add("hora");
+  span.innerText = horario();
   paragrafo.append(span);
-  div.append(paragrafo);
 
-  elemento.conversa.append(div);
+  elemento.conversa.append(paragrafo);
   elemento.conversa.scrollTop = elemento.conversa.scrollHeight;
   elemento.input_mensagem.value = "";
 }
