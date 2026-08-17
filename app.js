@@ -1,5 +1,12 @@
 import { usuarios, listarUsuarios, usuarioID, mensagens } from "./contatos.js";
 
+const elemento = {
+  caixa_de_mensagens: document.querySelector(".msg-container"),
+  input_mensagem: document.querySelector("input[type='text']"),
+  conversa: document.querySelector(".mensagens"),
+  lista_contatos: document.querySelector(".todoscontatos"),
+};
+
 mensagens(2, 1);
 
 const listar = listarUsuarios(2);
@@ -12,7 +19,7 @@ const userAT = {
 };
 
 function carregarContatos(usuarioIndex) {
-  elemento.lista_contatos.innerHTML = ""; // limpa os cards estáticos do HTML
+  elemento.lista_contatos.innerHTML = "";
 
   const contatos = usuarioID(usuarioIndex);
 
@@ -34,8 +41,8 @@ elemento.lista_contatos.addEventListener("click", (e) => {
   const card = e.target.closest(".Contatos");
   if (!card) return;
 
-  userAT.contatoAtual = number(card.id);
-  conversas(estado.usuarioAtual, estado.contatoAtual);
+  userAT.contatoAtual = Number(card.id);
+  conversas(userAT.usuarioAtual, userAT.contatoAtual);
 });
 
 function conversas(usuarioIndex, contatoIndex) {
@@ -63,12 +70,8 @@ function conversas(usuarioIndex, contatoIndex) {
   document.querySelector(".perfil h2").innerText = contato.name;
 }
 
-const elemento = {
-  caixa_de_mensagens: document.querySelector(".msg-container"),
-  input_mensagem: document.querySelector("input[type='text']"),
-  conversa: document.querySelector(".mensagens"),
-  lista_contatos: document.querySelector(".todoscontatos"),
-};
+carregarContatos(userAT.usuarioAtual);
+conversas(userAT.usuarioAtual, userAT.contatoAtual);
 
 elemento.caixa_de_mensagens.addEventListener("submit", (e) => {
   e.preventDefault();
