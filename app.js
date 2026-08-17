@@ -5,6 +5,8 @@ const elemento = {
   input_mensagem: document.querySelector("input[type='text']"),
   conversa: document.querySelector(".mensagens"),
   lista_contatos: document.querySelector(".todoscontatos"),
+  perfil_nome: document.querySelector(".perfil h2"),
+  perfil_foto: document.querySelector(".perfil img"),
 };
 
 mensagens(2, 1);
@@ -68,6 +70,9 @@ function conversas(usuarioIndex, contatoIndex) {
   elemento.conversa.scrollTop = elemento.conversa.scrollHeight;
 
   document.querySelector(".perfil h2").innerText = contato.name;
+
+  elemento.perfil_nome.innerText = contato.name;
+  elemento.perfil_foto.src = `https://i.pravatar.cc/150?u=${contato.number}`;
 }
 
 carregarContatos(userAT.usuarioAtual);
