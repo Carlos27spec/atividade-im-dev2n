@@ -113,7 +113,7 @@ function insertmessage(message) {
 
 const Perfil = document.getElementById("Perfil");
 const container = document.getElementById("container");
-const contatos = container.innerHTML;
+const contatosBase = container.innerHTML;
 
 Perfil.addEventListener("click", function () {
   const telaAT = Perfil.classList.contains("ativo");
