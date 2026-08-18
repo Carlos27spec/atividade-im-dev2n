@@ -170,6 +170,31 @@ Perfil.addEventListener("click", function () {
   }
 });
 
+function voltarParaContatos() {
+  Perfil.classList.remove("ativo");
+  container.innerHTML = contatosBase;
+  elemento.lista_contatos = document.querySelector(".todoscontatos");
+  carregarContatos(userAT.usuarioAtual);
+}
+
+container.addEventListener("click", (e) => {
+  const cardContato = e.target.closest(".Contatos");
+  if (cardContato) {
+    userAT.contatoAtual = Number(cardContato.id);
+    conversas(userAT.usuarioAtual, userAT.contatoAtual);
+    return;
+  }
+
+  const cardPerfil = e.target.closest(".perfil-item");
+  if (cardPerfil) {
+    userAT.usuarioAtual = Number(cardPerfil.dataset.index);
+    userAT.contatoAtual = 0;
+
+    voltarParaContatos();
+    conversas(userAT.usuarioAtual, userAT.contatoAtual);
+  }
+});
+
 function criarContatos(srcFoto, nome, hora, ultima, NaoLidas, idContato) {
   //criação dos elementos dos card de contatos
   const cardContainer = document.createElement("div");
